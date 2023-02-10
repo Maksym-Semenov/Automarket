@@ -4,8 +4,8 @@ namespace Automarket.DAL.Interfaces;
 
 public interface IBaseRepository<T>
 {
-    bool Create(T entity);
-    T Get(int Id);
+    Task<bool> Create(T entity);
+    Task<Car> Get(int id);
     Task<List<T>> Select();
-    bool Delete(T entity);
+    Task<bool> Delete(T entity);
 }

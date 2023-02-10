@@ -13,14 +13,17 @@ public class CarReposytory : ICarRepository
         _db = db;
     }
     
-    public bool Create(Car entity)
+    public async Task<bool> Create(Car entity)
     {
-        throw new NotImplementedException();
+       await _db.Car.AddAsync(entity);
+       await _db.SaveChangesAsync();
+
+       return true;
     }
 
-    public Car Get(int Id)
+    public async Task<Car> Get(int id)
     {
-        throw new NotImplementedException();
+        return await _db.Car.FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<List<Car>> Select()
@@ -28,13 +31,16 @@ public class CarReposytory : ICarRepository
         return await _db.Car.ToListAsync();
     }
 
-    public bool Delete(Car entity)
+    public async Task<bool> Delete(Car entity)
     {
-        throw new NotImplementedException();
+        _db.Car.Remove(entity);
+        _db.SaveChangesAsync();
+
+        return true;
     }
 
-    public Car GetByName(string name)
+    public async Task<Car> GetByName(string name)
     {
-        throw new NotImplementedException();
+        return await _db.Car.FirstOrDefaultAsync(x => x.Name == name);
     }
 }

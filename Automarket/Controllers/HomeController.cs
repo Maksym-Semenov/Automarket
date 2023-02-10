@@ -14,10 +14,9 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        Car car = new Car();
-        return View(car);
+        return View();
     }
 
     public IActionResult Privacy()

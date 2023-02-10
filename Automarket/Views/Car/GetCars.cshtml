@@ -1,0 +1,21 @@
+﻿@using Automarket.Domain.Entity
+@model List<Automarket.Domain.Entity.Car>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>title</h2>
+
+@foreach (var car in Model)
+{
+    <p>@car.Id</p>
+    <p>@car.Model</p>
+    <p>@car.Description</p>           
+    <p>@car.Name</p>
+    <p>@car.Price</p>
+    <p>@car.Speed</p>
+    <p>@car.DateCreate</p>
+    <p>@car.TypeCar</p>
+}
