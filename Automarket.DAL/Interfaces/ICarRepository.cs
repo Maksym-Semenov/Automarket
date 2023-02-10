@@ -1,6 +1,8 @@
-﻿namespace Automarket.DAL.Interfaces;
+﻿using Automarket.Domain.Entity;
 
-public interface ICarRepository
+namespace Automarket.DAL.Interfaces;
+
+public interface ICarRepository : IBaseRepository<Car>
 {
-    
+    Car GetByName(string name);
 }

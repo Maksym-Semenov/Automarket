@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Automarket.Domain.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Automarket.Models;
 
@@ -15,7 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        Car car = new Car();
+        return View(car);
     }
 
     public IActionResult Privacy()
