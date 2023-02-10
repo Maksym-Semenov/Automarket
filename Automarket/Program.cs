@@ -1,6 +1,8 @@
 using Automarket.DAL;
 using Automarket.DAL.Interfaces;
 using Automarket.DAL.Repositiories;
+using Automarket.Service.Implementations;
+using Automarket.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddScoped<ICarRepository, CarReposytory>();
+builder.Services.AddScoped<ICarService, CarService>();
 
 var app = builder.Build();
 
