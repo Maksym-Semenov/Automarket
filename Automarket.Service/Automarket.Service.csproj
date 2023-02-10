@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Automarket.DAL\Automarket.DAL.csproj" />
+      <ProjectReference Include="..\Automarket.Domain\Automarket.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
